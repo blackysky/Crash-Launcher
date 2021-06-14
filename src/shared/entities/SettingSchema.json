@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "properties": {
+        "locale": {
+            "description": "The display language of the launcher",
+            "default": "en",
+            "type": "string"
+        },
+        "autoDownload": {
+            "description": "Should launcher auto download new update",
+            "default": false,
+            "type": "boolean"
+        },
+        "autoInstallOnAppQuit": {
+            "description": "Should launcher auto install new update after app quit",
+            "default": false,
+            "type": "boolean"
+        },
+        "allowPrerelease": {
+            "description": "Should launcher show the pre-release",
+            "default": false,
+            "type": "boolean"
+        },
+        "apiSetsPreference": {
+            "description": "The download API set preferences",
+            "default": "'mcbbs'",
+            "enum": [
+                "bmcl",
+                "mcbbs",
+                "mojang"
+            ],
+            "type": "string"
+        },
+        "apiSets": {
+            "description": "The supported unofficial api sets",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "url"
+                ]
+            }
+        }
+    },
+    "required": [
+        "allowPrerelease",
+        "apiSets",
+        "apiSetsPreference",
+        "autoDownload",
+        "autoInstallOnAppQuit",
+        "locale"
+    ],
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false
+}

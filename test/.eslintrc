@@ -1,0 +1,14 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "assert": true,
+    "expect": true,
+    "should": true,
+  },
+  "extends": "../.eslintrc.json",
+  "rules": {
+    "prefer-arrow-callback": "off"
+  }
+}
